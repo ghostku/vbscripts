@@ -1,12 +1,12 @@
 ' MEDoc Switcher v0.5 2013-10-21'
-' Программа переключает настройки клиента MEDoc на другой сервер '
-' в программе используется разбор XML файла '
+' РџСЂРѕРіСЂР°РјРјР° РїРµСЂРµРєР»СЋС‡Р°РµС‚ РЅР°СЃС‚СЂРѕР№РєРё РєР»РёРµРЅС‚Р° MEDoc РЅР° РґСЂСѓРіРѕР№ СЃРµСЂРІРµСЂ '
+' РІ РїСЂРѕРіСЂР°РјРјРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ СЂР°Р·Р±РѕСЂ XML С„Р°Р№Р»Р° '
 Option Explicit
 Dim strServer, strMEDocPath, objFSO
-' Управляющие параметры не менять'
-Const CONFIG_STATION		= "station.exe.config" ' Файлы конфигурации'
+' РЈРїСЂР°РІР»СЏСЋС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹ РЅРµ РјРµРЅСЏС‚СЊ'
+Const CONFIG_STATION		= "station.exe.config" ' Р¤Р°Р№Р»С‹ РєРѕРЅС„РёРіСѓСЂР°С†РёРё'
 Const CONFIG_EZVIT			= "ezvit.exe.config" 
-Const MEDOC_DISPLAY_NAME	= "m.e.doc.station" ' Имя МЕДка в списке установленных программ'
+Const MEDOC_DISPLAY_NAME	= "m.e.doc.station" ' РРјСЏ РњР•Р”РєР° РІ СЃРїРёСЃРєРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹С… РїСЂРѕРіСЂР°РјРј'
 'Const 
 
 Set objFSO = CreateObject("Scripting.FileSystemObject")
@@ -29,7 +29,7 @@ End If
 
 ModifyConfig strMEDocPath & "\" & CONFIG_STATION,strServer
 'ModifyConfig strMEDocPath & "\" & CONFIG_EZVIT,strServer
-WScript.Echo "OK. Адрес сервера изменён на: " & strServer
+WScript.Echo "OK. РђРґСЂРµСЃ СЃРµСЂРІРµСЂР° РёР·РјРµРЅС‘РЅ РЅР°: " & strServer
 
 WScript.Quit(0)
 
@@ -57,7 +57,7 @@ Function ModifyConfig(strPath, strServer)
 End Function
 
 Function GetInstalledSoftPath(strSoftName, x64)
-	' Внутренни параметры'
+	' Р’РЅСѓС‚СЂРµРЅРЅРё РїР°СЂР°РјРµС‚СЂС‹'
 	Const strCOMPUTER = "."
 	Const HKLM = &H80000002 'HKEY_LOCAL_MACHINE 
 	Const REGKEY32 = "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
